@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <title>My Mobile Shop</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="navbar.css">
+</head>
+<body> 
+
+    <nav>
+        <div class="Hlogo">My Mobile Shop</div>
+         <!-- search bar right align -->
+        <div class="Hsearch">
+            <form action="#">
+              <input class="Hsearch" type="search" placeholder="Search Here...">
+               
+            </form>
+        </div>
+
+
+        <div class="Hicons">
+        <!-- Delivery Truck -->
+        
+        <section class="Hcontainer">
+          <a href="Delivery.html" class="HDelivery-link">
+              <img src="./icons/del0.png" name="del" alt="Delivery" class="HnavIcon Delivery-icon">
+              <section class="Hoverlay">
+                <img src="./icons/del1.png" class="Htext">
+              </section>
+          </a>
+        </section>
+        
+
+        <!-- Like -->
+        <section class="Hcontainer">
+          <a href="Like.html" class="HLike-link">
+              <img src="./icons/like0.png" alt="Like" name="like" class="HnavIcon Like-icon">
+              <section class="Hoverlay">
+                <img src="./icons/like1.png" class="Htext">
+              </section>
+          </a>
+      </section>
+        
+
+        <!-- Add tO Cart -->
+        <section class="Hcontainer">
+          <a href="ATC.html" class="HATC-link">
+              <img src="./icons/add-to-cart0.png" alt="Cart" name="cart" class="HnavIcon ATC-icon">
+              <section class="Hoverlay">
+                <img src="./icons/add-to-cart1.png" class="Htext">
+              </section>
+          </a>
+        </section>
+        
+
+        <!-- Account -->
+        <section class="Hcontainer">
+          <a href="Account.html" class="HAccount-link">
+              <img name="acc" src="./icons/acc0.png" alt="Account" class="HnavIcon Account-icon">
+              <section class="Hoverlay">
+                <img src="./icons/acc1.png" class="Htext">
+              </section>
+          </a>
+        </section>
+        
+        </div>
+    </nav>
+
+    <!-- Remaining content of the page -->
+
+
+
+<div class="slideshow">
+    <div class="slider">
+
+    <div class="slide">
+      <img src="./img/mobile/oppof21pro.jpeg">
+    </div>
+
+    <div class="slide">
+      <img src="./img/mobile/iphone.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="./img/mobile/Galaxy.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="./img/mobile/huawei.jpeg">
+    </div>
+
+      <div class="navigation">
+        <p class="fas fa-chevron-left prev-btn">❮</p>
+        <p class="fas fa-chevron-right next-btn">❯</p>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
+    </div>
+    </div>
+
+<script type="text/javascript">
+    const slider = document.querySelector(".slider");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    const slides = document.querySelectorAll(".slide");
+    const slideIcons = document.querySelectorAll(".slide-icon");
+    const numberOfSlides = slides.length;
+    var slideNumber = 0;
+
+    //image slider next button
+    nextBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber++;
+
+      if(slideNumber > (numberOfSlides - 1)){
+        slideNumber = 0;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider previous button
+    prevBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber--;
+
+      if(slideNumber < 0){
+        slideNumber = numberOfSlides - 1;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider autoplay
+    var playSlider;
+
+    var repeater = () => {
+      playSlider = setInterval(function(){
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slideIcons.forEach((slideIcon) => {
+          slideIcon.classList.remove("active");
+        });
+
+        slideNumber++;
+
+        if(slideNumber > (numberOfSlides - 1)){
+          slideNumber = 0;
+        }
+
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+      }, 3000);
+    }
+    repeater();
+
+    //stop the image slider autoplay on mouseover
+    slider.addEventListener("mouseover", () => {
+      clearInterval(playSlider);
+    });
+
+    //start the image slider autoplay again on mouseout
+    slider.addEventListener("mouseout", () => {
+      repeater();
+    });
+</script>
+
+
+<!-- ------- Trending And View More Start Here ---------- -->
+  <div class="tren-vmore">
+    <p class="tren">&ensp;&ensp;&nbsp;Special Offers</p>
+    <p><a href="#" class="vmore">View More &rarr;</a></p>
+  </div>
+<!------------ Special Offers View More And Card End Here --------- -->
+
+
+<!---------- Card Starts here ----------------->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <!--First Card set-->
+    <div class="carousel-item active">
+      
+      <div class="card-wrapper container-sm d-flex  justify-content-around">
+      <div class="card">
+      <div class="card-img">
+        <section class="imgg">
+          <img src="./img/mobile/samsung.png" class="card-img-top" alt="...">
+        </section>
+      </div>
+      <div class="card-act-tr">
+            <a href="./productDetails.html"><p>More Details</p></a>
+      </div>
+      <div class="card-price-btn card-body">
+        <div class="card-price">
+          <p class="pr-name">Samsung S24</p>
+          <p class="pr-var">(8GB/256GB)</p>
+          <div class="pr-price-off">
+            <p class="pr-price">₹80999 </p>&ensp;
+            <p class="pr-delprice"><del>₹85999</del></p>&ensp;
+            <p class="pr-off">5% Off</p>
+          </div>
+        </div>      
+        <div class="card-btn">
+          <button class="cd-btn" onclick="#">Add To Cart</button>
+          <button class="cd-btn" onclick="#">Buy Now</button>
+        </div>
+      </div>
+    </div>
+        
+    <div class="card">
+      <div class="card-img">
+        <section class="imgg">
+          <img src="./img/mobile/tws.jpg" class="card-img-top" alt="...">
+        </section>
+      </div>
+      <div class="card-act-tr">
+            <a href="./productDetails.html"><p>More Details</p></a>
+      </div>
+      <div class="card-price-btn card-body">
+        <div class="card-price">
+          <p class="pr-name">TWS Buds</p>
+          <p class="pr-var">True Wireless</p>
+          <div class="pr-price-off">
+            <p class="pr-price">₹999 </p>&ensp;
+            <p class="pr-delprice"><del>₹1199</del></p>&ensp;
+            <p class="pr-off">16% Off</p>
+          </div>
+        </div>      
+        <div class="card-btn">
+          <button class="cd-btn" onclick="#">Add To Cart</button>
+          <button class="cd-btn" onclick="#">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <section class="imgg">
+          <img src="./category/buds.jpg" class="card-img-top" alt="...">
+        </section>
+      </div>
+      <div class="card-act-tr">
+            <a href="./productDetails.html"><p>More Details</p></a>
+      </div>
+      <div class="card-body">
+        <div class="card-price">
+          <p class="pr-name">Noise Buds</p>
+          <p class="pr-var">Wireless</p>
+          <div class="pr-price-off">
+            <p class="pr-price">₹1599 </p>&ensp;
+            <p class="pr-delprice"><del>₹1999</del></p>&ensp;
+            <p class="pr-off">20% Off</p>
+          </div>
+        </div>      
+        <div class="card-btn">
+          <button class="cd-btn" onclick="#">Add To Cart</button>
+          <button class="cd-btn" onclick="#">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+</div>
+    </div>
+    
+    <!--Second Card set-->
+    <div class="carousel-item">
+      <div class="card-wrapper container-sm d-flex   justify-content-around">
+      
+    
+    <div class="card">
+      <div class="card-img">
+        <section class="imgg">
+          <img src="./category/headphone.jpg" class="card-img-top" alt="...">
+        </section>
+      </div>
+      <div class="card-act-tr">
+            <a href="./productDetails.html"><p>More Details</p></a>
+      </div>
+      <div class="card-body">
+        <div class="card-price">
+          <p class="pr-name">Sony Earphone</p>
+          <p class="pr-var">Wired</p>
+          <div class="pr-price-off">
+            <p class="pr-price">₹3599 </p>&ensp;
+            <p class="pr-delprice"><del>₹4999</del></p>&ensp;
+            <p class="pr-off">28% Off</p>
+          </div>
+        </div>      
+        <div class="card-btn">
+          <button class="cd-btn" onclick="#">Add To Cart</button>
+          <button class="cd-btn" onclick="#">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <section class="imgg">
+          <img src="./category/smartWatch.jpg" class="card-img-top" alt="...">
+        </section>
+      </div>
+      <div class="card-act-tr">
+            <a href="./productDetails.html"><p>More Details</p></a>
+      </div>
+      <div class="card-body">
+        <div class="card-price">
+          <p class="pr-name">Pebble Orion</p>
+          <p class="pr-var">Smart Watch</p>
+          <div class="pr-price-off">
+            <p class="pr-price">₹3199 </p>&ensp;
+            <p class="pr-delprice"><del>₹4199</del></p>&ensp;
+            <p class="pr-off">23% Off</p>
+          </div>
+        </div>      
+        <div class="card-btn">
+          <button class="cd-btn" onclick="#">Add To Cart</button>
+          <button class="cd-btn" onclick="#">Buy Now</button>
+        </div>
+      </div>
+    </div>    
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</div>
+<!-- --------- Cards End Here--------- -->
+
+<div style="width: 100%;height: 30px;"></div>
+<!-- ------- Available Product Category Title Start Here ---------- -->
+  <div class="apc-div">
+    <h1 class="apc">Available Product Categories</h1>
+  </div>
+<!-- ------- Available Product Category Title End Here ---------- -->
+
+
+<!-- ------- Available Product Category Starts Here ---------- -->
+
+<div id="pr-cat">
+  <table>
+  <tr>
+
+    <td>
+      <div>
+        <img src="./category/smartPhone.jpg">
+      </div> 
+      <section>
+        <h3>Mobiles</h3>
+      </section>
+    </td>
+
+    <td>
+      <div>
+        <img src="./category/smartWatch.jpg">
+      </div>
+      <section>
+        <h3>Smart <br>Watches</h3>
+      </section>
+    </td>
+    
+    <td>
+      <div>
+        <img src="./category/neckband.jpg">
+      </div>
+      <section>
+        <h3>Earphones/<br>Neck-Bands</h3>
+      </section>
+    </td>
+
+    <td>       
+      <div>
+        <img src="./category/buds.jpg">
+      </div> 
+      <section>
+        <h3>Earpods/<br>Buds</h3>
+      </section>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td>
+      <div>
+        <img src="./category/headphone.jpg">
+      </div>
+      <section>
+        <h3>Headphones</h3>
+      </section>
+    </td>
+
+    <td>
+      <div>
+        <img src="./category/chacab.jpg">
+      </div>
+      <section>
+        <h3>Chargers</h3>
+      </section>
+    </td>
+    <td>
+      <div>
+        <img src="./category/speaker.jpg">
+      </div>
+      <section>
+        <h3>Sounds</h3>
+      </section>      
+    </td>
+
+    <td>
+      <div>
+        <p style="font-size: 30px;font-weight: 600;padding-top: 25%;">Mobile<br>Accessories</p>
+      </div> 
+      <section>
+        <h3>Mobile<br>Accessories</h3>
+      </section>
+    </td>
+
+  </tr>
+  </table>
+</div>
+<!-- ------- Available Product Category Starts Here ---------- -->
+
+<footer class="footer">
+        <div class="container">
+            <div class="left">
+                <div class="section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook--v1.png" alt="Facebook">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/twitter--v1.png" alt="Twitter">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@Mymobileshop.com</p>
+                    <p>Phone: +91 9874563210</p>
+                </div>
+            </div>
+             <div class="right">
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d135207.54329385413!2d152.86995482964105!3d-27.490125899360272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a0366c14c8d%3A0x830335e9ad955d86!2sMy%20Mobile!5e0!3m2!1sen!2sin!4v1729697982769!5m2!1sen!2sin" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p style="margin-top: -130px;">69 Adelaide St, Brisbane City QLD 4000, Australia</p>
+            </div>
+        </div>
+
+            <div id="copy-rights" style="padding-bottom: 20px;">
+                <p>&copy; 2024 My Mobile Shop. All rights reserved.</p>
+            </div>
+    </footer>
+
+</body>
+</html> 

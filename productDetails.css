@@ -1,0 +1,152 @@
+*{padding: 0;margin: 0;}
+
+.prdct{
+	width: 100%;
+	height: 590px;
+	display: flex;
+}
+
+/*----------------------------------------------*/
+/* Div divided into 2 parts d1 and d2* contain prev and next buttons */
+.product-imgs{
+	width: 40%;
+	justify-content: center;
+	align-content: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  padding: 20px;
+  margin-top:19.2%; 
+  color: blue;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  margin-left: 32.75%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+/* Main div for slide show */
+#d1{
+	height: 90%;
+	/*border:2px solid;*/
+}
+
+/* Division  contains set of slideshow */
+.prd-img{
+	width: 100%;
+	display:flex;
+	justify-content: center;
+}
+
+.prd-img img{
+	padding-top: 10%;
+	margin-left: 20%;
+	max-width: 60%;
+}
+
+/* Division for Dot's */
+#d2{
+	height: 10%;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: skyblue;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #008cba;
+}
+
+/*----------------------------------------------*/
+
+.prdct-dtls{
+	width: 70%;
+	background-color: #dbe2fa;
+}
+
+.detail{
+	padding-top: 5%;
+	padding-left: 8%;
+	right: 0;
+}
+
+.prdct-price{
+  font-size: 26px;
+  font-weight: bolder;
+}
+
+.prdct-delprice{
+  color: #8a8a8a;
+  font-size: 26px;
+}
+.prdct-off{
+  color: #028A0F;
+  font-size: 20px;
+}
+
+#prdct-clr{
+	font-size: 20px;
+}
+
+#prdct-highlight p,#prdct-offer p{
+	padding-top: 30px;
+	font-size: 24px;
+	font-weight: 500px;
+}
+
+ul{
+	padding-left: 5%;
+}
+
+#prdct-offer li::before {
+            content: "\1F4CC"; /* Pushpin emoji */
+            margin-right: 8px; /* Space between emoji and text */
+        }
+
+#card-btn{
+	padding-top: 5%;
+}
+
+#card-btn button{
+	height: 40px;
+}
+
+.prdct-crd-btn{
+	font-size: 24px;
+	width: 40%;
+	margin-left: 5%;
+	border-radius: 6px;
+	border:none;
+	color: white;
+	background-color: green;
+}
+
+.prdct-crd-btn:hover{
+	cursor: pointer;
+	color: green;
+	border: solid 2px green;
+	background-color: white;
+	transform: scale(1.4);
+	transition-duration: 0.8s;
+}
